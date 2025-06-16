@@ -1,73 +1,143 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title>Ankara’daki Yok Olan Heykeller</title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1561.6">
-  <style type="text/css">
-    body {background-color: #f7f7f7}
-    span.s1 {font-kerning: none}
+  <meta charset="UTF-8" />
+  <title>Yok Olan Heykeller Haritası</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Harita stili -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #map {
+      width: 100%;
+      height: 600px;
+      margin: 20px auto;
+    }
   </style>
 </head>
 <body>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;div style="width:100%; height:100vh; position:relative; background:#f7f7f7;"&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;div id="map-container" style="height:100%; width:100%;"&gt;&lt;/div&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/div&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"><b></b></span><br></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;script&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>function initMap() {</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>var map = L.map('map-container').setView([39.9208, 32.8541], 13);</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"><b><span class="Apple-converted-space">  </span></b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>attribution: '&amp;copy; OpenStreetMap'</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>}).addTo(map);</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"><b></b></span><br></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>// Heykel 1</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>L.marker([39.93475286822148, 32.83690516621607]).addTo(map)</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>.bindPopup(`</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;div style="max-width:250px;"&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;b style="font-size:16px;"&gt;Su Perileri&lt;/b&gt;&lt;br&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;img src="https://dl.dropboxusercontent.com/scl/fi/b9joqtsjuhirturs843tq/Su-perileri-Tando-an.jpg?rlkey=6mbt7w45cb6yjm9a1w65inf8y&amp;st=rvmcdw1e"<span class="Apple-converted-space"> </span></b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">             </span>style="width:100%; height:auto; margin:5px 0;"&gt;&lt;br&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;p style="font-size:14px; margin:5px 0;"&gt;1992'de Tandoğan Meydanı'na yerleştirildi. Cermodern'e taşındı.&lt;/p&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;/div&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>`);</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"><b></b></span><br></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>// Heykel 2</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>L.marker([39.927, 32.860]).addTo(map)</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>.bindPopup(`</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;div style="max-width:250px;"&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;b style="font-size:16px;"&gt;Örnek Heykel&lt;/b&gt;&lt;br&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;img src="https://via.placeholder.com/250x150?text=Heykel+Görseli"<span class="Apple-converted-space"> </span></b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">             </span>style="width:100%; height:auto; margin:5px 0;"&gt;&lt;br&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;p style="font-size:14px; margin:5px 0;"&gt;Açıklama metni buraya gelecek.&lt;/p&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;/div&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>`);</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"><b></b></span><br></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>// Heykel 3</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>L.marker([39.925533, 32.866287]).addTo(map)</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>.bindPopup(`</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;div style="max-width:250px;"&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;b style="font-size:16px;"&gt;Güvenpark Atatürk Heykeli&lt;/b&gt;&lt;br&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/G%C3%BCvenpark_Monument%2C_Ankara%2C_2013.jpg"<span class="Apple-converted-space"> </span></b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">             </span>style="width:100%; height:auto; margin:5px 0;"&gt;&lt;br&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;p style="font-size:14px; margin:5px 0;"&gt;1935'te yapılmış, 2020'lerde kaldırılmıştır.&lt;/p&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;/div&gt;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>`);</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>}</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"><b></b></span><br></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>// Leaflet CSS ve JS'yi dinamik yükleme</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>var leafletCSS = document.createElement('link');</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>leafletCSS.rel = 'stylesheet';</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>leafletCSS.href = 'https://unpkg.com/leaflet/dist/leaflet.css';</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>document.head.appendChild(leafletCSS);</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000; min-height: 21.0px"><span class="s1"><b></b></span><br></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>var leafletJS = document.createElement('script');</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>leafletJS.src = 'https://unpkg.com/leaflet/dist/leaflet.js';</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>leafletJS.onload = initMap;</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>document.head.appendChild(leafletJS);</b></span></h2>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 18.0px Arial; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/script&gt;</b></span></h2>
+
+<h2>Ankara’daki Yok Olan Heykeller</h2>
+<div id="map"></div>
+
+<!-- Harita scripti -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  // Haritayı başlat (Ankara merkez)
+  var map = L.map('map').setView([39.9208, 32.8541], 13);
+
+  // Harita katmanı
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap katkıda bulunanlar'
+  }).addTo(map);
+
+  // =======================
+  // 📍 1. HEYKEL
+  // =======================
+  var marker1 = L.marker([39.93475286822148, 32.83690516621607]).addTo(map);
+  marker1.bindPopup(`
+    <b>Heykel Adı:</b> Su Perileri<br>
+    <img src="https://www.dropbox.com/scl/fi/b9joqtsjuhirturs843tq/Su-perileri-Tando-an.jpg?rlkey=6mbt7w45cb6yjm9a1w65inf8y&st=rvmcdw1e&dl=1” width="200"><br>
+    <p>Su perileri heykeli 1992 de Tandoğan Meydanına yerleştirilmiştir, Ankara inşaatı sırasında kaldırılıp yerine ‘’Kütahya porseleni’’ Heykeli konulmuştur. 2008’de Hürriyet Ankara’nın takibi ile Yenimahalle deposunda çürümüş halde bulunan heykel, Metin Yurdanur tarafından restore edilerek 2010 da Cermodern’in otopark girişine yerleştirildi güncelde de hala orda bulunmaktadır.</p>
+  `);
+
+  // =======================
+  // 📍 2. HEYKEL (örnek)
+  // =======================
+  var marker2 = L.marker([39.927, 32.860]).addTo(map);
+  marker2.bindPopup(`
+    <b>Heykel Adı:</b> Örnek Heykel<br>
+    <img src="https://via.placeholder.com/200x120?text=Heykel+Görseli" width="200"><br>
+    <p>Bu alana heykelle ilgili metin yazabilirsiniz.</p>
+  `);
+
+ // =======================
+  // 📍 3 HEYKEL
+  // =======================
+  var marker1 = L.marker([39.925533, 32.866287]).addTo(map);
+  marker1.bindPopup(`
+    <b>Heykel Adı:</b> Güvenpark Atatürk Heykeli<br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/G%C3%BCvenpark_Monument%2C_Ankara%2C_2013.jpg" width="200"><br>
+    <p>1935’te yapılmış, 2020’lerde kaldırılmıştır.</p>
+  `);
+
+
+  // Yeni heykel eklemek için aşağıya kopyalayarak devam edebilirsin.
+</script>
+
 </body>
 </html>
+
+—————————————————————
+
+
+
+<!-- Harita Stili -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #map {
+    height: 100%;
+    width: 100%;
+  }
+
+  /* Başlık gizlendi, istersen göster */
+  h2 {
+    display: none;
+  }
+</style>
+
+<h2>Ankara’daki Yok Olan Heykeller</h2>
+<div id="map"></div>
+
+<!-- Leaflet Harita Scripti -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  var map = L.map('map').setView([39.9208, 32.8541], 13);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap katkıda bulunanlar'
+  }).addTo(map);
+
+  // 📍 1. HEYKEL
+  var marker1 = L.marker([39.93475286822148, 32.83690516621607]).addTo(map);
+  marker1.bindPopup(`
+    <b>Heykel Adı:</b> Su Perileri<br>
+    <img src="https://dl.dropboxusercontent.com/scl/fi/b9joqtsjuhirturs843tq/Su-perileri-Tando-an.jpg?rlkey=6mbt7w45cb6yjm9a1w65inf8y&st=rvmcdw1e" width="200"><br>
+    <p>Su perileri heykeli 1992’de Tandoğan Meydanı’na yerleştirildi. İnşaat sırasında kaldırıldı ve daha sonra Cermodern'e taşındı.</p>
+  `);
+
+  // 📍 2. HEYKEL (Örnek)
+  var marker2 = L.marker([39.927, 32.860]).addTo(map);
+  marker2.bindPopup(`
+    <b>Heykel Adı:</b> Örnek Heykel<br>
+    <img src="https://via.placeholder.com/200x120?text=Heykel+Görseli" width="200"><br>
+    <p>Bu alana heykelle ilgili metin yazabilirsiniz.</p>
+  `);
+
+  // 📍 3. HEYKEL
+  var marker3 = L.marker([39.925533, 32.866287]).addTo(map);
+  marker3.bindPopup(`
+    <b>Heykel Adı:</b> Güvenpark Atatürk Heykeli<br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/G%C3%BCvenpark_Monument%2C_Ankara%2C_2013.jpg" width="200"><br>
+    <p>1935’te yapılmış, 2020’lerde kaldırılmıştır.</p>
+  `);
+</script>
+
