@@ -1,143 +1,58 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <title>Yok Olan Heykeller Haritası</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div style="position:fixed; top:0; left:0; right:0; bottom:0; margin:0; padding:0; overflow:hidden;">
+  <div id="map" style="height:100%; width:100%;"></div>
+</div>
 
-  <!-- Harita stili -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    h2 {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    #map {
-      width: 100%;
-      height: 100%;
-      margin: 20px auto;
-    }
-  </style>
-</head>
-<body>
-
-<h2>Ankara’daki Yok Olan Heykeller</h2>
-<div id="map"></div>
-
-<!-- Harita scripti -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 <script>
-  // Haritayı başlat (Ankara merkez)
-  var map = L.map('map').setView([39.9208, 32.8541], 13);
+  // Tam ekran harita başlatma
+  var map = L.map('map', {
+    zoomControl: true,
+    attributionControl: false
+  }).setView([39.9208, 32.8541], 13);
 
   // Harita katmanı
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap katkıda bulunanlar'
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
 
-  // =======================
-  // 📍 1. HEYKEL
-  // =======================
-  var marker1 = L.marker([39.93475286822148, 32.83690516621607]).addTo(map);
-  marker1.bindPopup(`
-    <b>Heykel Adı:</b> Su Perileri<br>
-    <img src="https://www.dropbox.com/scl/fi/b9joqtsjuhirturs843tq/Su-perileri-Tando-an.jpg?rlkey=6mbt7w45cb6yjm9a1w65inf8y&st=rvmcdw1e&dl=1” width="200"><br>
-    <p>Su perileri heykeli 1992 de Tandoğan Meydanına yerleştirilmiştir, Ankara inşaatı sırasında kaldırılıp yerine ‘’Kütahya porseleni’’ Heykeli konulmuştur. 2008’de Hürriyet Ankara’nın takibi ile Yenimahalle deposunda çürümüş halde bulunan heykel, Metin Yurdanur tarafından restore edilerek 2010 da Cermodern’in otopark girişine yerleştirildi güncelde de hala orda bulunmaktadır.</p>
-  `);
+  // 📍 1. HEYKEL - Su Perileri
+  L.marker([39.93475286822148, 32.83690516621607]).addTo(map)
+    .bindPopup(`
+      <div style="max-width:300px;">
+        <h3 style="margin:5px 0;">Su Perileri</h3>
+        <img src="https://dl.dropboxusercontent.com/scl/fi/b9joqtsjuhirturs843tq/Su-perileri-Tando-an.jpg?rlkey=6mbt7w45cb6yjm9a1w65inf8y&st=rvmcdw1e" 
+             style="width:100%; height:auto; margin:5px 0;">
+        <p style="font-size:14px; margin:5px 0;">1992'de Tandoğan Meydanı'na yerleştirildi. İnşaat sırasında kaldırıldı ve daha sonra Cermodern'e taşındı.</p>
+      </div>
+    `);
 
-  // =======================
-  // 📍 2. HEYKEL (örnek)
-  // =======================
-  var marker2 = L.marker([39.927, 32.860]).addTo(map);
-  marker2.bindPopup(`
-    <b>Heykel Adı:</b> Örnek Heykel<br>
-    <img src="https://via.placeholder.com/200x120?text=Heykel+Görseli" width="200"><br>
-    <p>Bu alana heykelle ilgili metin yazabilirsiniz.</p>
-  `);
+  // 📍 2. HEYKEL - Örnek
+  L.marker([39.927, 32.860]).addTo(map)
+    .bindPopup(`
+      <div style="max-width:300px;">
+        <h3 style="margin:5px 0;">Örnek Heykel</h3>
+        <img src="https://via.placeholder.com/300x180?text=Heykel+Görseli" 
+             style="width:100%; height:auto; margin:5px 0;">
+        <p style="font-size:14px; margin:5px 0;">Bu alana heykelle ilgili metin yazabilirsiniz.</p>
+      </div>
+    `);
 
- // =======================
-  // 📍 3 HEYKEL
-  // =======================
-  var marker1 = L.marker([39.925533, 32.866287]).addTo(map);
-  marker1.bindPopup(`
-    <b>Heykel Adı:</b> Güvenpark Atatürk Heykeli<br>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/G%C3%BCvenpark_Monument%2C_Ankara%2C_2013.jpg" width="200"><br>
-    <p>1935’te yapılmış, 2020’lerde kaldırılmıştır.</p>
-  `);
+  // 📍 3. HEYKEL - Güvenpark
+  L.marker([39.925533, 32.866287]).addTo(map)
+    .bindPopup(`
+      <div style="max-width:300px;">
+        <h3 style="margin:5px 0;">Güvenpark Atatürk Heykeli</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/G%C3%BCvenpark_Monument%2C_Ankara%2C_2013.jpg" 
+             style="width:100%; height:auto; margin:5px 0;">
+        <p style="font-size:14px; margin:5px 0;">1935'te yapılmış, 2020'lerde kaldırılmıştır.</p>
+      </div>
+    `);
 
-
-  // Yeni heykel eklemek için aşağıya kopyalayarak devam edebilirsin.
+  // Sayfa boyutu değiştiğinde haritayı yeniden boyutlandır
+  window.addEventListener('resize', function() {
+    map.invalidateSize();
+  });
 </script>
-
-</body>
-</html>
-
-—————————————————————
-
-
-
-<!-- Harita Stili -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-<style>
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  #map {
-    height: 100%;
-    width: 100%;
-  }
-
-  /* Başlık gizlendi, istersen göster */
-  h2 {
-    display: none;
-  }
-</style>
-
-<h2>Ankara’daki Yok Olan Heykeller</h2>
-<div id="map"></div>
-
-<!-- Leaflet Harita Scripti -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script>
-  var map = L.map('map').setView([39.9208, 32.8541], 13);
-
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap katkıda bulunanlar'
-  }).addTo(map);
-
-  // 📍 1. HEYKEL
-  var marker1 = L.marker([39.93475286822148, 32.83690516621607]).addTo(map);
-  marker1.bindPopup(`
-    <b>Heykel Adı:</b> Su Perileri<br>
-    <img src="https://dl.dropboxusercontent.com/scl/fi/b9joqtsjuhirturs843tq/Su-perileri-Tando-an.jpg?rlkey=6mbt7w45cb6yjm9a1w65inf8y&st=rvmcdw1e" width="200"><br>
-    <p>Su perileri heykeli 1992’de Tandoğan Meydanı’na yerleştirildi. İnşaat sırasında kaldırıldı ve daha sonra Cermodern'e taşındı.</p>
-  `);
-
-  // 📍 2. HEYKEL (Örnek)
-  var marker2 = L.marker([39.927, 32.860]).addTo(map);
-  marker2.bindPopup(`
-    <b>Heykel Adı:</b> Örnek Heykel<br>
-    <img src="https://via.placeholder.com/200x120?text=Heykel+Görseli" width="200"><br>
-    <p>Bu alana heykelle ilgili metin yazabilirsiniz.</p>
-  `);
-
-  // 📍 3. HEYKEL
-  var marker3 = L.marker([39.925533, 32.866287]).addTo(map);
-  marker3.bindPopup(`
-    <b>Heykel Adı:</b> Güvenpark Atatürk Heykeli<br>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/G%C3%BCvenpark_Monument%2C_Ankara%2C_2013.jpg" width="200"><br>
-    <p>1935’te yapılmış, 2020’lerde kaldırılmıştır.</p>
-  `);
-</script>
-
